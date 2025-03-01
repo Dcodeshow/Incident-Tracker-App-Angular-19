@@ -1,0 +1,69 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: #343a40;
+  color: white;
+  padding-top: 20px;
+  border-right: 2px solid #444;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar heading */
+.sidebar h4 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Sidebar navigation links */
+.nav-link {
+  color: #ccc;
+  font-size: 18px;
+  padding: 12px 20px;
+
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for links */
+.nav-link:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Active state for selected menu */
+.nav-link.active {
+  background-color: #0069d9;
+  color: white;
+}
+
+/* Main content area */
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* Content heading */
+.content h1 {
+  color: #343a40;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Card style for content */
+
+/* Make links inside the content area more engaging */
+.content a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.content a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,92 @@
+<div class="content">
+  <div class="container mt-4">
+    <!-- Add / Edit User Form -->
+    <div class="card p-3 mb-4">
+      <h5>Add / Edit User</h5>
+      <form [formGroup]="userForm">
+        <div class="row">
+          <div class="col-md-6">
+            <label for="userName" class="form-label">Username</label>
+            <input
+              type="text"
+              id="userName"
+              class="form-control"
+              formControlName="userName"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="fullName" class="form-label">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              class="form-control"
+              formControlName="fullName"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="emailId" class="form-label">Email</label>
+            <input
+              type="email"
+              id="emailId"
+              class="form-control"
+              formControlName="emailId"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              formControlName="password"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="role" class="form-label">Role</label>
+            <select id="role" class="form-select" formControlName="role">
+              <option value="Support Staff">Support Staff</option>
+              <option value="User">User</option>
+            </select>
+          </div>
+        </div>
+        @if (userForm.controls['userId'].value === 0) {
+        <button type="submit" class="btn btn-primary mt-2" (click)="onSubmit()">
+          Add User
+        </button>
+        } @else {
+        <button type="submit" class="btn btn-success mt-2" (click)="onUpdate()">
+          Update User
+        </button>
+        }
+      </form>
+    </div>
+
+    <!-- User List -->
+    <div class="card p-3">
+      <h5>User List</h5>
+      <div class="row" id="userList">
+        <!-- Example User Card -->
+        @for (item of Alluser(); track $index) {
+        <div class="col-12 col-md-4 col-lg-3 mb-4">
+          <div class="card user-card p-3">
+            <h6 class="card-title">{{ item.fullName }}</h6>
+            <p class="card-text">Email: john.doe {{ item.emailId }}</p>
+            <p class="card-text">Username:{{ item.userName }}</p>
+            <div class="d-flex">
+              <button
+                class="btn btn-danger btn-sm me-2"
+                (click)="onDelete(item.userId)"
+              >
+                Delete
+              </button>
+              <button class="btn btn-primary btn-sm" (click)="onEdit(item)">
+                Edit
+              </button>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

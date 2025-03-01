@@ -1,0 +1,42 @@
+<!-- Sidebar (Left Menu) -->
+<div class="sidebar">
+  <h4>Dashboard</h4>
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="dashboard" routerinkActive="active">
+        Home</a
+      >
+    </li>
+    @if (userDetails.role == 'IncidentAdmin') {
+    <li class="nav-item">
+      <a class="nav-link" routerLink="users" routerinkActive="active">User</a>
+    </li>
+    } @if (userDetails.role == 'User') {
+    <li class="nav-item">
+      <a class="nav-link" routerLink="create-new" routerinkActive="active"
+        >Create New Incident</a
+      >
+    </li>
+    }
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="incidnet-list" routerinkActive="active"
+        >Incident List</a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="logOut()">Logout</a>
+    </li>
+  </ul>
+</div>
+
+<!-- Main Content Area -->
+<div class="content">
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title m-0">Welcome {{ userDetails.fullName }}</h5>
+    </div>
+  </div>
+
+  <router-outlet />
+</div>

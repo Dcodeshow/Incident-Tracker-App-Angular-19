@@ -1,0 +1,23 @@
+<div class="login-wrapper">
+  <div class="container">
+    <div class="card">
+      <h2>Login</h2>
+      <form>
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          [(ngModel)]="userLoginDetails.userName"
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          [(ngModel)]="userLoginDetails.password"
+        />
+        <button type="submit" (click)="loginUser()">Login</button>
+        <p class="text-danger text-center mt-1">{{ error }}</p>
+      </form>
+    </div>
+  </div>
+</div>
