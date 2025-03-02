@@ -6,6 +6,7 @@ import { UsersComponent } from './pages/users/users.component';
 import { create } from 'domain';
 import { CreateIncidentComponent } from './pages/create-incident/create-incident.component';
 import { IncidentListComponent } from './pages/incident-list/incident-list.component';
+import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
   {
@@ -20,6 +21,7 @@ export const routes: Routes = [
   {
     path: '',
     component: HeaderComponent,
+    canActivate: [authGuard],
     children: [
       {
         path: 'dashboard',
