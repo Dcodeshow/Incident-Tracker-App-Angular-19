@@ -3,11 +3,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { HeaderComponent } from './pages/header/header.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { UsersComponent } from './pages/users/users.component';
-import { create } from 'domain';
 import { CreateIncidentComponent } from './pages/create-incident/create-incident.component';
 import { IncidentListComponent } from './pages/incident-list/incident-list.component';
 import { authGuard } from './auth.guard';
-import { authChildGuard } from './auth-child.guard';
 
 export const routes: Routes = [
   {
