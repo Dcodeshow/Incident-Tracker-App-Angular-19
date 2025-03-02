@@ -7,6 +7,7 @@ import { create } from 'domain';
 import { CreateIncidentComponent } from './pages/create-incident/create-incident.component';
 import { IncidentListComponent } from './pages/incident-list/incident-list.component';
 import { authGuard } from './auth.guard';
+import { authChildGuard } from './auth-child.guard';
 
 export const routes: Routes = [
   {
